@@ -9,6 +9,9 @@ import Projects from './pages/Projects';
 import Footer from './pages/Footer';
 import styled from 'styled-components';
 import Navbar from './components/Navbar';
+import MobileHome from './pages/MobileHome'
+import MediaQuery from 'react-responsive'
+
 function App() {
   return (
     <React.Fragment>

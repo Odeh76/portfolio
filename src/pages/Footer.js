@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import {FaGithub, FaFacebook, FaLinkedinIn} from 'react-icons/fa';
-import Navbar from '../components/Navbar';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default class Footer extends Component {
     render() {
@@ -10,23 +9,15 @@ export default class Footer extends Component {
             <FooterStyle>
                 <div className="container">
                 <div className="footer bg-light">
-                <div className="icons bg-light">
-                    <a target="_blank" href="http://www.github.com"><FaGithub style={iconStyle}  size={40} /></a>
-                    <a target="_blank" href="http://www.facebook.com/odeh76"><FaFacebook style={iconStyle}  size={40} /></a>
-                    <a target="_blank" href="https://www.linkedin.com/in/abdullah-odeh"><FaLinkedinIn style={iconStyle} size={40} /></a>
-                    <p className="bg-light"><i>Designed and built</i> by <strong>Abdullah Odeh</strong></p>
-                </div>
+                
+                <p className="bg-light"><i className="bg-light">Designed and built</i> by <strong className="bg-light">Abdullah Odeh</strong></p>
+                <p>&copy; 2020</p>
             </div>
             </div>
             </FooterStyle>
             </Router>
         )
     }
-}
-
-const iconStyle = {
-    color: 'black',
-    padding: '0.3rem'
 }
 
 export const FooterStyle = styled.footer` {
@@ -45,7 +36,7 @@ export const FooterStyle = styled.footer` {
     }
 
     .container .icons a {
-        justify-content: center;
+        margin: auto;
         opacity: 0.5;
         background-color: var(--lightGray);
         &:hover {
@@ -58,6 +49,7 @@ export const FooterStyle = styled.footer` {
         justify-content: center;
         padding: 1rem;
         color: var(--lightGray);
+        
     }
 
     

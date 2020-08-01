@@ -2,17 +2,21 @@
 
 :root {
     --blueMain: #2a2a72;
+    --navyBlue: #000034;
     --whiteMain: #ffffff;
     --blackMain: #000000;
     --lightGray: #808080;
     --lightBlue: #dfebe8;
     --lightBeige: #fff5eb;
     --grayMain: #333333;
+    --darkBrown: #2b1d0e;
+    --faded: #f7f7f7;
 }
 
 * {
-    background-color: var(--whiteMain);
+    background-color: var(--navyBlue);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+

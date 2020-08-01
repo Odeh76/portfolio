@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
+import {css} from 'styled-components'
 import test1 from '../img/test1.jpg';
+import ecommerce from '../img/ecommerce.png';
 import {bounce} from 'react-animations';
 export default function Projects(props) {
     console.log(props)
@@ -9,7 +11,6 @@ export default function Projects(props) {
         <ProjectsStyle>
         <section id="projects"data-aos="fade-right">
             <h6>Things I'm building...</h6>
-            <div className="projects-container">
             <FadeAnimation>
                 <ul>
                     <li className="image"></li>
@@ -21,31 +22,9 @@ export default function Projects(props) {
                 </ul>
                 </FadeAnimation>
                 <div className="border"></div>
-            </div>
         </section>
         </ProjectsStyle>
     )
-}
-
-const size = {
-    mobileS: '320px',
-    mobileM: '375px',
-    mobileL: '425px',
-    tablet: '768px',
-    laptop: '1024px',
-    laptopL: '1440px',
-    desktop: '2560px'
-}
-
-export const device = {
-    mobileS: `(min-width: ${size.mobileS})`,
-    mobileM: `(min-width: ${size.mobileM})`,
-    mobileL: `(min-width: ${size.mobileL})`,
-    tablet: `(min-width: ${size.tablet})`,
-    laptop: `(min-width: ${size.laptop})`,
-    laptopL: `(min-width: ${size.laptopL})`,
-    desktop: `(min-width: ${size.desktop})`,
-    desktopL: `(min-width: ${size.desktop})`,
 }
 
 export const fade = keyframes`
@@ -90,33 +69,31 @@ export const FadeAnimationNav = styled.section`
 
 
 export const ProjectsStyle = styled.section`
-
     #projects {
         width: 100%;
         height: 100vh;
-
+       margin-bottom: 1rem;
         
     }
 
     section h6 {
-    color: var(--blackMain);
+    color: var(--lightGray);
     font-weight: 500;
     font-family: Arial, Helvetica, sans serif;
     padding: 1rem;
-    text-transform: uppercase;
     letter-spacing: 0.1rem;
     text-align: center;
+    font-size: 1.5rem;
     }
 
     ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        height: 90vh;
+        height: 100vh;
         width: 93%;
         grid-gap: 2rem;
         padding: 2rem;
         margin: auto;
-
         
     }
 
@@ -126,6 +103,10 @@ export const ProjectsStyle = styled.section`
         justify-content: center;
         list-style: none;
         background-color: var(--lightBlue);
+    }
+
+    ul li:nth-child(1) {
+        background-image: url(${ecommerce});
     }
 
     .image {
@@ -144,13 +125,6 @@ export const ProjectsStyle = styled.section`
         border: 1px solid var(--grayMain);
         width: 88%;
         margin: auto;
-    }
-
-    @media ${device.mobileL} {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        background-size: cover;
-        background-repeat: no-repeat;
     }
 
     

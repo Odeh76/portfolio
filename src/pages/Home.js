@@ -8,18 +8,16 @@ export default class Home extends Component {
     render() {
         return (
             <HomeStyle>
-            <FadeAnimation>
                 <div className="container">
-                    <div className="description">
-                        <h6>Hi, my name is</h6>
-                        <h1><Header /></h1>
-                        <h1>I build things on the internet...</h1>
-                        <p>I'm an aspiring web developer living in Mountain View, California, specializing in building websites and web applications. </p>
-                        <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=aodeh76@gmail.com"><button>Connect</button></a>
-                        <div className="border"></div>
+                    <div className="description-home">
+                        <Header />
+                        <h1 className="build">I build things on the internet. . .</h1>
+                        <p className="aspire">I'm an aspiring web developer living in Mountain View, California, specializing in building websites and web applications. </p>
+                        <Router>
+                        <Link target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=aodeh76@gmail.com"><Button>Connect</Button></Link>
+                        </Router>
                     </div>
                 </div>
-            </FadeAnimation>
             </HomeStyle>
         )
     }
@@ -31,61 +29,98 @@ export const HomeStyle = styled.div`
     .container {
         display: flex;
         width: 100%;
-        height: 90vh;
+        height: 100vh;
         text-align: center;
         align-items: center;
-        justify-content: center;
     }
     
-    .container .description {
+    .container .description-home {
         width: 100%;
         color: var(--lightGray);
-        text-align: center;
+        text-align: left;
+        margin-left: 3rem;
         align-items: center;
         justify-content: center;
     }
 
-    .container .description h6 {
-        margin-bottom: -1rem;
-    }
-
-    .container .description h1 {
-        font-weight: 330;
-        font-size: 5rem;
-    }
-
-    .container .description p {
+    .container .description-home .aspire {
         font-family: Arial, Helvetica, sans-serif;
-        margin-top: 2rem;
         padding: 1rem;
-        width: 40%;
-        margin: auto;
-        letter-spacing: 0.1rem;
+        margin: 2rem 0 0 3.4rem;
+        width: 35%;
+        letter-spacing: 0.08rem;
+    
     }
 
-    .container .description button {
-        text-transform: capitalize;
-        font-size: 1.4rem;
-        border-radius: 0.5rem;
-        border: 1px solid var(--blueMain);
-        padding: 1rem 1rem;
-        cursor: pointer;
-        display: inline-block;
-        margin: 0.2rem 0.5rem 1rem 0.5rem;
-        transition: all 0.3s ease-in;
-        &:hover {
-          transition: all 0.3s ease-in;
-          background-color: var(--blackMain);
-          color: var(--whiteMain);
+    .container .description-home .build {
+        margin: 1rem 0 -0.5rem 4.5rem;
+        color: var(--lightGray);
+
+    }
+
+    @media screen and (max-width: 992px) {
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 1rem;
         }
 
-        &:focus {
-            outline: 0;
-            transition: all 0.3s ease-out;
+        .container .description-home .build {
+            font-size: 35px;
+            margin: 0;
+            padding: 0.5rem;
         }
 
-        .border {
-            border: 1px solid var(--grayMain);
-            width: 100%;
+        .container .description-home .aspire {
+            width: 80%;
+            margin: 0;
+            padding: 0.5rem;
         }
-        `;
+    }
+
+   
+
+        
+`;
+
+ // @media screen and (max-width: 500px) {
+    //     background-color: black;
+    //   }
+    
+    //   @media screen and (max-width: 768px) {
+    //     background-color: red;
+    
+    //     @media screen and (min-width: 769px) and (max-width: 1170px) {
+    //     background-color: yellow;
+    //   }
+    
+    //   @media screen and (min-width: 1171px) {
+    //     background-color: orange;
+    //   }
+
+const Button = styled.button`
+font-size: 1.4rem;
+border-radius: 0.5rem;
+border: 1px solid var(--blueMain);
+padding: 1rem 1rem;
+cursor: pointer;
+display: inline-block;
+margin: 0.2rem 0.5rem 1rem 4.3rem;
+transition: all 0.3s ease-in;
+color: var(--lightGray);
+letter-spacing: 0.1rem;
+&:hover {
+  transition: all 0.3s ease-in;
+  background-color: var(--lightGray);
+  color: var(--navyBlue);
+  font-style: italic;
+}
+
+@media screen and (max-width: 992px) {
+    display: inline-block;
+    justify-content: center;
+    margin: 1rem 0 0 0.4rem;
+}
+`
