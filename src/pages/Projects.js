@@ -127,7 +127,7 @@ export const ProjectsStyle = styled.section`
     @media screen and (max-width: 500px) {
         #projects {
             width: 100%;
-        height: 220vh;
+        height: 260vh;
         }
 
          ul {
