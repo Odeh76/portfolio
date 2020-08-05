@@ -127,7 +127,7 @@ export const ProjectsStyle = styled.section`
     @media screen and (max-width: 500px) {
         #projects {
             width: 100%;
-        height: 260vh;
+        height: 250vh; 
         }
 
          ul {
@@ -173,3 +173,5 @@ export const ProjectsStyle = styled.section`
 //     animation: 1s ${bounceAnimation};
 // `
 
+
+// test
