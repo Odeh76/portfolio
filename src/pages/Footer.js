@@ -9,7 +9,6 @@ export default class Footer extends Component {
             <FooterStyle>
                 <div className="container">
                 <div className="footer bg-light">
-                
                 <p className="bg-light"><i className="bg-light">Designed and built</i> by <strong className="bg-light">Abdullah Odeh</strong></p>
                 <p>&copy; 2020</p>
             </div>

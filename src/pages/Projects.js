@@ -12,7 +12,7 @@ export default function Projects(props) {
         <section id="projects"data-aos="fade-right">
             <h6>Things I'm building...</h6>
             <FadeAnimation>
-                <ul>
+                <ul className="projects-grid">
                     <li className="image"></li>
                     <li className="image"></li>
                     <li className="image"></li>
@@ -21,7 +21,6 @@ export default function Projects(props) {
                     <li className="image"></li>
                 </ul>
                 </FadeAnimation>
-                <div className="border"></div>
         </section>
         </ProjectsStyle>
     )
@@ -101,8 +100,6 @@ export const ProjectsStyle = styled.section`
         align-items: center;
         text-align: center;
         justify-content: center;
-        list-style: none;
-        background-color: var(--lightBlue);
     }
 
     ul li:nth-child(1) {
@@ -126,6 +123,47 @@ export const ProjectsStyle = styled.section`
         width: 88%;
         margin: auto;
     }
+
+    @media screen and (max-width: 500px) {
+        #projects {
+            width: 100%;
+        height: 220vh;
+        }
+
+         ul {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            height: 100vh;
+            width: 93%;
+            grid-gap: 2rem;
+            padding: 2rem;
+            margin: auto;
+        }
+
+        .image {
+        height: 250px;
+        background-image: url(${test1});
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all ease-out 0.4s;
+        }
+
+
+    }
+    
+      @media screen and (max-width: 768px) {
+        .image {
+            display: grid;
+            grid-template-columns: repeat (1, 1fr);
+        }
+      }
+    
+      @media screen and (min-width: 1171px) {
+        .image {
+            display: grid;
+            grid-template-columns: repeat (1, 1fr);
+        }
+      }
 
     
 `

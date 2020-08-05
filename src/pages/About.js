@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import portrait from '../img/portrait.JPG';
 import {FaGithub, FaFacebook, FaLinkedinIn, FaEnvelope, FaAngleRight} from 'react-icons/fa';
+import portraitresized from '../img/portraitresized.jpg'
 import { css } from 'styled-components';
 
 export default function About() {
@@ -9,10 +10,12 @@ export default function About() {
         <AboutStyle>
     <div id="about">
     <br />
-    <h1 className="about-me">About Me</h1>
     <section className="container" data-aos="fade-up">
-
+    <h1 className="about-me">- About Me</h1>
+    <br />
         <div className="description-about" >
+            <p>Hi! I'm Abdullah. An aspiring Web developer living in Mountain View, California.</p>
+            <br />
             <p><i>I chose web development because it helps fulfill:</i></p> 
                 <ol>
                     <li>The desire to create </li>
@@ -20,7 +23,7 @@ export default function About() {
                     <li>The satisfaction of building useful things</li>
                 </ol>
                 <br />
-            <p> I enjoy building websites, applications with intuitive user interface and providing seamless user experience.
+            <p> I enjoy building websites and applications with intuitive user interface and providing seamless user experience.
             </p>
             <br />
             {/* Web development allows me to satiate my love for learning and provides me with a creative outlet. */}
@@ -30,23 +33,24 @@ export default function About() {
                 I am always looking to learn new technologies, and find creative, efficient ways to solve problems. 
                     </p> 
                     <br />
-                <p>
+                <span className="current-stack">
                 Current tech stack:
-                </p>
+
+                </span>
                 <ul className="tech-stack">
                     <li><FaAngleRight size={12} />HTML5</li>
                     <li><FaAngleRight size={12} />CSS3</li>
                     <li><FaAngleRight size={12} />JavaScript (ES6+)</li>
                     <li><FaAngleRight size={12} />React</li>
                     <li><FaAngleRight size={12} />Node.js</li>
-                    <li><FaAngleRight size={12} />Styled components</li>
+                    <li><FaAngleRight size={12} />Styled Components</li>
                 </ul>
-        </div>
     <img className="portrait" src={portrait} alt="portrait of Abdullah"/>
+        </div>
     
       
         </section>
-        <div className="icons" data-aos="fade-right">
+        <div className="icons" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1400" >
                     <br />
                     <a target="_blank" href="http://www.github.com/Odeh76"><FaGithub size={25} /></a>
                     <br />
@@ -79,11 +83,9 @@ export const AboutStyle = styled.section`
     }
 
     .container {
-        display: flex;
         width: 100%;
         height: 100vh;
-        margin-left: 3rem;
-        padding: 1rem;
+        line-height: 1.5rem;
     }
 
     .icons {
@@ -118,27 +120,19 @@ export const AboutStyle = styled.section`
     }
 
     .description-about {
-        width: 40%;
+        width: 100%;
         height: 50vh;
         font-weight: 400;
         font-size: 1.2rem;
         text-align: justify;
         padding: 0.2rem;
-        margin-left: 1.5rem;
         font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .description-about li:nth-child(1,2,3) {
-        letter-spacing: 0.07rem;
-        font-weight: 100;
     }
 
     .description-about ol {
         margin: 1rem 0 0 1rem;
-        padding: 1rem;
         color: var(--lightGray);
         font-weight: 200;
-        line-height: 2rem;
         font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -151,12 +145,9 @@ export const AboutStyle = styled.section`
         height: 45vh;
         width: 35%;
         background-size: cover no repeat;
-        background-position: center;
         transition: all 0.4s ease-in;
         border-radius: 10%;
         padding: 1rem;
-        position: relative;
-        left: 10%;
     }
 
     img:hover {
@@ -167,33 +158,79 @@ export const AboutStyle = styled.section`
 
     .tech-stack {
         display: grid;
+        width: 100%;
         grid-template-columns: repeat(2, 1fr);
-        padding: 0.5rem;
         list-style: none;
-        letter-spacing: 0.09rem;
-        line-height: 2rem;
+        padding: 0.5rem;
+        letter-spacing: 0.04rem;
     }
 
-    @media screen and (max-width: 992px) {
+    // Small Phones 
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    
+    .icons {
+        display: none;
+    }
+}
+
+    // IPhone 6/7/8
+
+    @media screen and (min-width: 375px) and (max-width: 667px) {
+        .container {
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-me {
+            color: var(--faded);
+            font-size: 1.2rem;
+            margin: 0 0 0 1rem;
+        }
+
         .icons {
             display: none;
         }
 
-        .about-me {
-            text-align: center;
-            justify-content: center;
-            margin: auto;
-        }
-
         .description-about {
-            display: grid;
             width: 100%;
-            grid-template-columns: repeat (1, 1fr);
-            padding: 0;
-            word-spacing: 1px;
+            font-size: 16px;
+            justify-content: center;
+            padding: 1rem;
+            word-spacing: -0.02rem;
         }
 
-      
+        .current-stack {
+            color: var(--faded);
+            letter-spacing: 0.1rem;
+        }
+
+        .portrait {
+            width: 100%;
+            background-image: ${portraitresized};
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
     }
 
+    @media screen and (min-width: 360px) and (max-width: 640px) {
+        .icons {
+            display: none;
+        }
+    }
+
+    // IPad
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .icons {
+            display: none;
+        }
+    }
+
+   
+
+
 `
+

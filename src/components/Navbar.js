@@ -6,19 +6,17 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
 export default function Navbar() {
     return (
             <NavComponent>
-            <div className="wrapper">
             <nav className="nav">
                 <ul className="nav-list">
                     <Router>
                     
-                    <Link className="link-style" to="home">Home</Link>
-                    <Link className="link-style" to="about">About</Link>
-                    <Link className="link-style" to="projects">Projects</Link>
-                    <Link className="link-style" to="resume">Resume</Link>
+                    <Link className="link-style" data-aos="fade-down" data-aos-duration="500" to="home">Home</Link>
+                    <Link className="link-style" data-aos="fade-down" data-aos-duration="700" to="about">About</Link>
+                    <Link className="link-style" data-aos="fade-down" data-aos-duration="900" to="projects">Projects</Link>
+                    <Link className="link-style" data-aos="fade-down" data-aos-duration="1100" to="resume">Resume</Link>
                     </Router>
                 </ul>
             </nav>
-            </div>
             </NavComponent>
     )
 }
@@ -30,15 +28,13 @@ export const NavComponent = styled.nav`
 
     .nav {
         display: flex;
-        
+        width: 100%;
+        margin: auto;
     }
 
     .nav-list {
         display: flex;
         list-style: none;
-        width: 30%;
-        position: relative;
-        left: 70%;
     }
 
     .link-style {
@@ -54,55 +50,67 @@ export const NavComponent = styled.nav`
         font-weight: 500;
     }
 
-    @media screen and (max-width: 992px) {
+    
+
+    // IPhone 6/7/8
+
+    @media screen and (min-width: 375px) and (max-width: 767px) {
+        .nav {
+            position: fixed;
+            justify-content: center;
+           letter-spacing: 0.1rem;
+    }       
+
         .nav-list {
-            display: flex;
-            position: relative;
-            left: 21%
-            background-color: white;
+            font-size: 18px;
+        }
+
+    }
+
+    // IPad
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .nav {
+           font-size: 2rem;
+           justify-content: center;
+           letter-spacing: 0.1rem;
         }
     }
 
-    @media screen and (min-width: 450px) and (max-width: 767px) {
-        * {
-            position: relative;
-            display: flex;
+    // IPad Pro
+
+    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+        .nav {
+            font-size: 2.5rem;
+            letter-spacing: 0.1rem;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            right: 23%;
         }
-      }
-    @media screen and (min-width: 450px) and (max-width: 767px) {
-        * {
-            position: relative;
-            display: flex
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-      }
     
-    
-    
-        @media screen and (min-width: 769px) and (max-width: 1170px) {
-        * {
+    }
+
+    // Laptop
+
+    @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        .nav {
+            font-size: 1.2rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            justify-content: flex-end
         }
-      }
-       
-      }
+
+
+    }
     
-      @media screen and (min-width: 1171px) {
-          * {
-            display: flex;
-            position: relative;
-            left: 26%;
-            }
-      }
+
+    // Small Phones 
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .nav {
+        font-size: 15px;
+        position: fixed;
+    }
+}
+
+ 
 
 
 `
@@ -127,5 +135,45 @@ export const NavComponent = styled.nav`
 
 */
 
+// @media screen and (min-width: 450px) and (max-width: 767px) {
+//     * {
+//         position: relative;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         text-align: center;
+//         right: 23%;
+//     }
+//   }
+// @media screen and (min-width: 450px) and (max-width: 767px) {
+//     * {
+//         position: relative;
+//         display: flex
+//         justify-content: center;
+//         align-items: center;
+//         text-align: center;
+//     }
+//   }
+
+
+
+//     @media screen and (min-width: 769px) and (max-width: 1170px) {
+//     * {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         text-align: center;
+//     }
+//   }
+
+
+
+//   @media screen and (min-width: 1171px) {
+//       * {
+//         display: flex;
+//         position: relative;
+//         left: 26%;
+//         }
+//   }
 
 
